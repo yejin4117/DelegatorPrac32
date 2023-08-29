@@ -28,9 +28,17 @@ namespace DelegatorPrac32
             //products.Sort(SortWithPrice);
 
             // 2. 무명 델리게이터를 활용한 구현
-            products.Sort(delegate (Product x, Product y) {
-                return x.Price.CompareTo(y.Price);
-            });
+            //products.Sort(delegate (Product x, Product y) { 
+            //    return x.Price.CompareTo(y.Price);
+            //});
+
+            // 3. 람다를 활용한 구현
+            //products.Sort((x, y) => { 
+            //    return x.Price.CompareTo(y.Price); 
+            //});
+
+            // 3. 람다를 활용한 구현2(약식)
+            products.Sort((x, y) => x.Price.CompareTo(y.Price));
 
             //출력
             foreach (var item in products)
